@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>🎲 Roll a Die App</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <style>
+    body {
+      font-family: Cambria, serif;
+      background: linear-gradient(135deg, #fbe9e7, #fff3e0);
+      text-align: center;
+      margin: 0;
+      padding: 30px;
+    }
+    h1 {
+      font-size: 4vw;
+      color: #4e342e;
+      margin-bottom: 20px;
+    }
+    button {
+      padding: 12px 30px;
+      font-size: 1.5vw;
+      border: none;
+      border-radius: 12px;
+      background: #ff7043;
+      color: white;
+      cursor: pointer;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      transition: 0.3s;
+    }
+    button:hover {
+      background: #e64a19;
+      transform: scale(1.05);
+    }
+    img {
+      width: 15vw;   /* smaller dice */
+      margin-top: 25px;
+      transition: transform 0.3s ease-in-out;
+    }
+    .roll-animation {
+      transform: rotate(360deg) scale(1.1);
+    }
+  </style>
+</head>
+<body>
+  <h1>🎲 Roll A Die</h1>
+
+  <button onclick="rollDie()">Roll</button>
+  <br>
+  <img id="im1" src="d1.PNG" alt="Die">
+
+  <script>
+    function rollDie() {
+      let im1 = document.getElementById("im1");
+      let images = ["d1.PNG","d2.PNG","d3.PNG","d4.PNG","d5.PNG","d6.PNG"];
+      let r = Math.floor(Math.random() * images.length);
+
+      // Add animation
+      im1.classList.add("roll-animation");
+      setTimeout(() => {
+        im1.src = images[r];
+        im1.classList.remove("roll-animation");
+      }, 300);
+    }
+  </script>
+</body>
+</html>
