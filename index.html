@@ -33,7 +33,7 @@
       transform: scale(1.05);
     }
     img {
-      width: 15vw;   /* smaller dice */
+      width: 15vw;
       margin-top: 25px;
       transition: transform 0.3s ease-in-out;
     }
@@ -47,15 +47,14 @@
 
   <button onclick="rollDie()">Roll</button>
   <br>
-  <img id="im1" src="d1.PNG" alt="Die">
+  <img id="im1" src="d1.png" alt="Die">
 
   <script>
     function rollDie() {
       let im1 = document.getElementById("im1");
-      let images = ["d1.PNG","d2.PNG","d3.PNG","d4.PNG","d5.PNG","d6.PNG"];
+      let images = ["d1.png","d2.png","d3.png","d4.png","d5.png","d6.png"];
       let r = Math.floor(Math.random() * images.length);
 
-      // Add animation
       im1.classList.add("roll-animation");
       setTimeout(() => {
         im1.src = images[r];
